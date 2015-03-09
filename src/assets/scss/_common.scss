@@ -1,0 +1,259 @@
+body {
+  background-image: $body-background-image;
+  background-position: 0px 0px;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  font-family: Oxygen;
+
+  header {
+    .menu-icon-large {
+      width: rem-calc(80px) !important;
+      height: rem-calc(60px) !important;
+      top: rem-calc(20px);
+      right: 1%;
+    }
+    .menu-icon {
+      &.home {
+        background-color: $green;
+      }
+      &.about {
+        background-color: $blue;
+      }
+      &.expertise {
+        background-color: $orange;
+      }
+      &.reference {
+        background: $purple;
+      }
+      &.contact {
+        background: $brown;
+      }
+      position: relative;
+      z-index: 9999;
+      width: rem-calc(50px);
+      height: rem-calc(45px);
+      right: rem-calc(8px);
+
+      i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: rem-calc(22px);
+        height: rem-calc(2px);
+        display: block;
+        background: $white;
+        &::before, &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: rem-calc(22px);
+          height: rem-calc(2px);
+          top: 0;
+          left: 0;
+          background: $white;
+
+        }
+
+      }
+
+    }
+  }
+  #container {
+    position: relative;
+
+    .content {
+      position: relative;
+      section {
+
+        text-align: center;
+        color: $text-color;
+        font-family: $font-global;
+        position: relative;
+        @include divider(80%, $light-gray);
+        &.about {
+          h1, h2, h3, h4 {
+            color: $blue;
+          }
+        }
+        h1 {
+          padding-top: 20px !important;
+        }
+        &.expertise {
+          h1, h4, h3 {
+            color: $orange;
+          }
+          .circle-progress-bar {
+            span {
+              display: block;
+              margin: 0;
+            }
+            i {
+              display: block;
+              position: absolute;
+            }
+          }
+        }
+        &.reference {
+          margin-bottom: rem-calc(30px);
+          h1, h2, h3 {
+            color: $purple;
+            padding: 0 4%;
+          }
+          .project {
+            width: 100%;
+            height: rem-calc(180px);
+            position: relative;
+
+            i {
+              display: block;
+              position: absolute;
+            }
+
+          }
+        }
+        &.contact {
+          h1 {
+            color: $brown;
+          }
+          input, textarea {
+            box-shadow: none !important;
+          }
+
+          .others{
+            position: absolute;
+            width: 80%;
+            left: 10%;
+            top:9%;
+            .alert-msg {
+              span {
+                color: #FFF;
+                font-size: 0.7em;
+              }
+              &.success-msg {
+                @include color-background($green, 0.6);
+                border-color: $green;
+              }
+              &.error-msg {
+                @include color-background(red, 0.6);
+              }
+            }
+
+          }
+
+        }
+      }
+      .contact_me {
+        position: fixed;
+        text-align: center;
+        i.btn_me {
+          display: block;
+          text-align: center;
+          cursor: pointer;
+        }
+        .details {
+          ul {
+            li {
+              display: inline-block;
+            }
+          }
+
+        }
+
+      }
+    }
+
+    .menu-left {
+      .small-menu {
+        ul {
+          &.home {
+            background: $green;
+          }
+          &.about {
+            background: $blue;
+          }
+          &.expertise {
+            background: $orange;
+          }
+          &.reference {
+            background: $purple;
+          }
+          &.contact {
+            background: $brown;
+          }
+        }
+      }
+    }
+
+    .to-top {
+      z-index: 10000;
+      position: fixed;
+      bottom: 17%;
+      right: 5%;
+      display: block;
+      cursor: pointer;
+
+      &.about {
+        i:before {
+          color: $blue;
+        }
+      }
+      &.expertise {
+        i:before {
+          color: $orange;
+        }
+      }
+      &.reference {
+        i:before {
+          color: $purple;
+        }
+      }
+      &.contact {
+        i:before {
+          color: $brown;
+        }
+      }
+    }
+
+  }
+  .loading {
+    z-index: 99999;
+    background-image: $body-background-image;
+    background-position: 0px 0px;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    .logo {
+      display: block;
+      position: absolute;
+    }
+    .icon-loading {
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      .round {
+        &.home {
+          background: $green;
+        }
+        &.about {
+          background: $blue;
+        }
+        &.expertise {
+          background: $orange;
+        }
+        &.reference {
+          background: $purple;
+        }
+        &.contact {
+          background: $brown;
+        }
+        float: left;
+        display: block;
+        @include radius(50px);
+        margin-left: 10px;
+      }
+    }
+  }
+}

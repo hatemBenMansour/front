@@ -1,0 +1,19 @@
+<section class="{{menu.label}}" id="{{menu.label}}"  >
+    <ng-top-offset id="{{menu.label}}">
+    <h1>{{menu.title}}</h1>
+
+    <p>{{menu.short_content}}</p>
+    <div ng-repeat="expertise in expertises">
+        <h4>{{expertise.label}}</h4>
+
+        <div class="divider"></div>
+        <div class="row">
+            <div ng-repeat="language in expertise.competences" class="columns small-6 large-3">
+                <ng-progress-bar language = "language"></ng-progress-bar>
+            </div>
+
+        </div>
+    </div>
+
+    </ng-top-offset>
+</section>

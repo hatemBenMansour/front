@@ -1,0 +1,38 @@
+.fixed {
+  width: 100%;
+  left: 0;
+  position: fixed !important;
+  top: 0;
+  z-index: 99;
+}
+@media screen and (max-width: 43.750em){
+  .for-only-mobile {
+    display: block;
+  }
+  .for-mobile-up {
+    display: none;
+  }
+
+
+}
+@media screen and (min-width: 43.813em) and (max-width: 64em) {
+
+  .for-only-mobile {
+    display: none;
+  }
+  .for-mobile-up {
+    display: block;
+  }
+
+}
+
+@media screen and (min-width: 64.063em) and (max-width: 120em) {
+
+  .for-only-mobile {
+    display: none;
+  }
+  .for-mobile-up {
+    display: block;
+  }
+
+}

@@ -1,0 +1,60 @@
+$body-background-image: url("../assets/images/bg.gif");
+$menu-background-image: url("../assets/images/bg-menu.gif");
+$logo-background-image: url("../assets/images/logo-large.png");
+///fonts
+$font-global: Oxygen;
+
+///colors
+$green: #00c09e;
+$blue: #0095c0;
+$purple: #cc7df5;
+$orange: #f4a281;
+$brown: #b88558;
+$brown-light: #edc097;
+$text-color: #474a49;
+$light-gray: #cfcfcf;
+$white: #FFF;
+$color-errors: #ff6559;
+$color-success: #2bcf73;
+
+////icons
+$font-icons: 'icons';
+$icon-home: '\E001';
+$icon-name-home: 'home';
+$icon-menu: '\E002';
+$icon-name-menu: 'menu';
+$icon-about: '\E003';
+$icon-name-about: 'about';
+$icon-contact: '\E004';
+$icon-name-contact: 'contact';
+$icon-expertise: '\E005';
+$icon-name-expertise: 'expertise';
+$icon-reference: '\E006';
+$icon-name-reference: 'reference';
+$icon-linkedin: '\E007';
+$icon-name-linkedin: 'linkedin';
+$icon-twitter: '\E008';
+$icon-name-twitter: 'twitter';
+$icon-viadeo: '\E009';
+$icon-name-viadeo: 'viadeo';
+$icon-code: '\E00A';
+$icon-name-code: 'code';
+$icon-cv: '\E00B';
+$icon-name-cv: 'cv';
+$icon-close: '\E00C';
+$icon-name-close: 'close';
+$icon-up: '\E00D';
+$icon-name-up: 'up';
+
+///header
+
+$topbar-home-bg-color: $green;
+$topbar-about-bg-color: $blue;
+$topbar-reference-bg-color: $purple;
+$topbar-expertise-bg-color: $orange;
+$topbar-contact-bg-color: $brown;
+$topbar-height: rem-calc(45);
+$rm-button-color: #00c09e;
+
+///animations
+$duration: 0.5s;

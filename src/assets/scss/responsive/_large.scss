@@ -1,0 +1,274 @@
+@media screen and (min-width: 64.063em) and (max-width: 120em) {
+  body {
+    #container {
+      .menu-left {
+        z-index: 9999;
+        position: fixed;
+        left: rem-calc(-187px);
+        width: rem-calc(250px);
+        height: 100%;
+        background: transparent;
+        .large-menu {
+          background-image: $menu-background-image;
+          height: 100%;
+          ul {
+            position: absolute;
+            height: 100%;
+            bottom: 0;
+            width: 76%;
+            li {
+              height: 20%;
+              padding: 15%;
+              a {
+                display: block;
+                text-align: center;
+                span {
+                  display: block;
+                  padding-top: 25%;
+                }
+
+              }
+              &.active{
+                a{
+                  color: white !important;
+                  i::before {
+                    color: white !important;
+                  }
+                }
+              }
+              &.home {
+                &.active{
+                  background: $green;
+                }
+                a {
+                  color: $green;
+                  i::before {
+                    color: $green;
+                    font-size: 3.2em;
+                  }
+                  span {
+                    font-size: 1.5em;
+                  }
+                }
+              }
+              &.about {
+                &.active{
+                  background: $blue;
+                }
+                a {
+                  color: $blue;
+                  i::before {
+                    color: $blue;
+                    font-size: 3.2em;
+                  }
+                  span {
+                    font-size: 1.5em;
+                  }
+                }
+              }
+              &.expertise {
+                &.active{
+                  background: $orange;
+                }
+                a {
+                  color: $orange;
+                  i::before {
+                    color: $orange;
+                    font-size: 3.2em;
+                  }
+                  span {
+                    font-size: 1.5em;
+                  }
+                }
+              }
+              &.reference {
+                &.active{
+                  background: $purple;
+                }
+                a {
+                  color: $purple;
+                  i::before {
+                    color: $purple;
+                    font-size: 2.2em;
+                  }
+                  span {
+                    font-size: 1.5em;
+                    padding-top: 18% !important;
+                  }
+                }
+              }
+              &.contact {
+                &.active{
+                  background: $brown;
+                }
+                a {
+                  color: $brown;
+                  i::before {
+                    color: $brown;
+                    font-size: 1.9em;
+                  }
+                  span {
+                    font-size: 1.5em;
+                    padding-top: 18% !important;
+                  }
+                }
+              }
+
+            }
+          }
+        }
+        .small-menu {
+          margin-left: -1px;
+          ul {
+            background: $green;
+            position: absolute;
+            bottom: 0;
+            height: 100%;
+            padding-left: 2%;
+            li {
+              height: 25%;
+              i::before {
+                font-size: 2.5em;
+              }
+              i {
+                &.icon_linkedin::before {
+                  margin: 6px 0 0 -2px !important;
+                }
+                &.icon_twitter::before {
+                  margin: 6px 0 0 -2px !important;
+                }
+                &.icon_viadeo::before {
+                  margin: 6px 0 0 0px !important;
+                }
+                &.icon_cv::before {
+                  margin: 6px 0 0 0px !important;
+                }
+
+              }
+            }
+          }
+        }
+
+      }
+      .content {
+        section {
+          font-size: 1.2em;
+          padding: 0 4%;
+          * {
+            margin: 2% auto;
+          }
+          p {
+            font-size: 1.2em;
+          }
+          img {
+            &.logo-large {
+              margin: 0 auto;
+              padding: 20% 5% 5% 5%;
+            }
+          }
+          &.home {
+            height: 100vh;
+          }
+          &.about {
+            .me {
+              @include background-image(250px, 200px, '../assets/images/me-ben-mansour-hatem.png')
+            }
+          }
+          &.expertise {
+            .circle-progress-bar {
+              span {
+                font-size: 1em;
+              }
+              i {
+                font-size: 1em;
+                top: 29%;
+                left: 46%;
+              }
+            }
+          }
+          &.reference {
+            padding: 0 !important;
+
+            .project {
+              width: 100%;
+              height: rem-calc(180px);
+              position: relative;
+              &.effilogis {
+                @include background-image(100%, 300px, '../assets/images/effilogis.jpg', cover, 0);
+              }
+              &.caf92 {
+                @include background-image(100%, 300px, '../assets/images/caf92.jpg', cover, 0);
+              }
+              &.baq {
+                @include background-image(100%, 300px, '../assets/images/baq.jpg', cover, 0);
+              }
+              &.onisep {
+                @include background-image(100%, 300px, '../assets/images/onisep.jpg', cover, 0);
+              }
+              &.cinemacity {
+                @include background-image(100%, 300px, '../assets/images/cinemacity.jpg', cover, 0);
+              }
+              &.nivernais {
+                @include background-image(100%, 300px, '../assets/images/nivernais.jpg', cover);
+              }
+              i {
+                color: $white;
+                font-size: 1.2em;
+                @include color-background($text-color, 0.5);
+                width: 100%;
+                height: rem-calc(65);
+                padding: 10px 0;
+                margin: 0;
+                bottom: 0;
+              }
+            }
+          }
+          &.contact{
+            .send-message{
+              position: absolute;
+              width: 80%;
+              left: 10%;
+              top:6%;
+              .alert-msg {
+                span {
+                  color: #FFF;
+                  font-size: 1.2em;
+                }
+                &.success-msg {
+                  @include color-background($green, 0.6);
+                  border-color: $green;
+                }
+                &.error-msg {
+                  @include color-background(red, 0.6);
+                }
+              }
+
+            }
+          }
+        }
+        .contact_me {
+          display: none;
+        }
+      }
+    }
+    .loading {
+      top: 0;
+      .logo {
+        left: 35%;
+        top: 29%;
+
+      }
+      .icon-loading {
+        width: 29%;
+        bottom: 10%;
+        .round {
+          width: 50px;
+          height: 50px;
+          @include radius(50px);
+          margin-left: 10px;
+        }
+      }
+    }
+
+  }
+}

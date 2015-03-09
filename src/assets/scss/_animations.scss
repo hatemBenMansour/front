@@ -1,0 +1,309 @@
+////animation contact me////
+.animate_contact_me_show {
+  @include transform(translateX(225px));
+  @include transition(transform $duration*2 ease);
+
+}
+
+.animate_contact_me_hide {
+  @include transform(translateX(0px));
+  @include transition(transform $duration*2 ease);
+}
+
+/// animation menu mobile////
+
+.animate_menu_mobile_show {
+  @include transform(translateY(217px));
+  @include transition(transform $duration*2 ease);
+
+}
+
+.animate_menu_mobile_hide {
+  @include transform(translateY(0px));
+  @include transition(transform $duration*2 ease);
+}
+
+////Animation icon menu///
+.menu-icon {
+  i {
+    @include transform(translateX(-50%) translateY(-50%));
+    &::before, &::after {
+      @include transform(translateY(-6px));
+      @include transition(transform $duration);
+
+    }
+    &::after {
+      @include transform(translateY(6px));
+    }
+  }
+  &:hover {
+    i::before {
+      @include transform(translateY(-8px));
+    }
+    i::after {
+      @include transform(translateY(8px));
+    }
+  }
+
+}
+
+.menu-icon-cross {
+  i::before, i::after {
+    transtform-origin: 50% 50%;
+  }
+  i {
+    @include transition(background $duration);
+  }
+  &.is-opened {
+    @include transform(rotate(180deg));
+    i {
+      background: transparent;
+      &::before {
+        @include transform(translateY(0) rotate(45deg));
+      }
+      &::after {
+        @include transform(translateY(0) rotate(-45deg));
+      }
+    }
+  }
+}
+
+///animation icons menu large ///
+.large-menu {
+  ul {
+    li {
+      &.menu-link:hover {
+        @include transition(background $duration*2 ease);
+        a {
+          color: $white !important;
+          @include transition(color $duration*2 ease);
+          i::before {
+            color: $white !important;
+            @include transition(color $duration*2 ease);
+            @include transform(translateY(30px) translateX(0));
+            @include transition(transform $duration ease);
+          }
+          span {
+            @include transform(translateY(-50px));
+            @include transition(transform $duration ease);
+
+          }
+        }
+
+      }
+      &.menu-link {
+        background: transparent;
+        @include transition(background $duration*2 ease);
+        a {
+          @include transition(color $duration*2 ease);
+          i::before {
+            @include transition(color $duration*2 ease);
+            @include transform(translateY(0px));
+            @include transition(transform $duration ease);
+
+          }
+          span {
+            @include transform(translateY(0px));
+            @include transition(transform $duration ease);
+          }
+        }
+      }
+      &.home:hover {
+        background: $green;
+      }
+      &.about:hover {
+        background: $blue;
+      }
+
+      &.expertise:hover {
+        background: $orange;
+      }
+
+      &.reference:hover {
+        background: $purple;
+      }
+      &.contact:hover {
+        background: $brown;
+      }
+
+    }
+  }
+}
+
+////animation icon small menu bar large
+.small-menu {
+  ul {
+    li {
+      a {
+        i::before {
+          @include transform(rotate(0deg));
+          @include transition(transform $duration*5);
+          @include transition(color $duration);
+        }
+        &:hover {
+          i::before {
+            color: $text-color !important;
+            @include transform(rotate(-10deg));
+            @include transition(transform $duration*5);
+            @include transition(color $duration);
+
+          }
+
+        }
+      }
+
+    }
+  }
+
+}
+
+////animation menu large
+
+.animate_menu_large_show {
+  @include transform(translate(187px));
+  @include transition(transform $duration*2 ease);
+
+}
+
+.animate_menu_large_hide {
+  @include transform(translate(0px));
+  @include transition(transform $duration*2 ease);
+}
+
+header {
+  @include transition(background $duration*2 ease);
+}
+
+.btn_animation {
+  @include transition(background $duration*2 ease);
+}
+
+.contact_me {
+  i.btn_me {
+    @include transition(background $duration*2 ease);
+  }
+  .details {
+    @include transition(background $duration*2 ease);
+  }
+}
+
+.small-menu {
+  ul {
+    @include transition(background $duration*2 ease);
+  }
+}
+
+.to-top {
+  @include transition(all cubic-bezier(0.250, 0.460, 0.450, 0.940) $duration);
+  i:before {
+    @include transition(color $duration ease);
+  }
+}
+
+.to-top.ng-hide-remove,
+.to-top.ng-hide-add.ng-hide-add-active {
+  opacity: 0;
+  display: block !important;
+}
+
+.to-top.ng-hide-add,
+.to-top.ng-hide-remove.ng-hide-remove-active {
+  opacity: 1;
+  display: block !important;
+}
+
+@include keyframes(fade-in) {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+
+}
+
+@include keyframes(fade-out) {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+
+}
+
+@include keyframes(animation-round) {
+  0% {
+    opacity: 0;
+    @include transform(scale(.1));
+
+  }
+  21.25% {
+    opacity: 1;
+    @include transform(scale(1.05));
+  }
+  25% {
+    @include transform(scale(1));
+  }
+
+}
+
+.loading {
+  &.close-loading {
+    @include transform(translateY(-1000px));
+    @include transition(transform $duration*2 ease);
+  }
+  .logo {
+    @include animation('fade-in 2s ');
+  }
+  .round {
+    @include animation('animation-round 2s linear ');
+    @include css3-prefix(animation-fill-mode, both);
+    &:nth-child(1) {
+      -webkit-animation-delay: .5s
+    }
+    &:nth-child(2) {
+      -webkit-animation-delay: 1s
+    }
+    &:nth-child(3) {
+      -webkit-animation-delay: 1.5s
+    }
+    &:nth-child(4) {
+      -webkit-animation-delay: 2s
+    }
+    &:nth-child(5) {
+      -webkit-animation-delay: 2.5s
+    }
+  }
+
+}
+
+////animation alert send message contact///
+.animate_alert_show {
+  @include transform(translateY(-16px));
+  @include transition(transform $duration*2 ease);
+
+}
+
+.animate_alert_hide {
+  @include transform(translateY(38px));
+  @include transition(transform $duration*2 ease);
+}
+
+////animation alert send message contact///
+
+.alert-msg {
+  opacity: 1;
+  padding: 10px;
+}
+
+.alert-msg.ng-hide-add.ng-hide-add-active,
+.alert-msg.ng-hide-remove.ng-hide-remove-active {
+  @include transition(all $duration*2 ease);
+}
+
+.alert-msg.ng-hide {
+  opacity: 0;
+  padding: 10px;
+}
+

@@ -1,0 +1,110 @@
+@mixin color-background($color, $alpha: 1) {
+  background-color: rgba(red($color), green($color), blue($color), $alpha) !important;
+}
+
+@mixin color-menu($name, $color) {
+  &.ss_menu_#{$name} {
+    @include color-background($color);
+  }
+}
+
+@mixin opacity($opacity: 0.5) {
+  $opacityMultiplied: ($opacity * 100);
+  filter: alpha(opacity=$opacityMultiplied);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $opacityMultiplied + ")";
+  @include css3-prefix('opacity', $opacity);
+}
+
+@mixin background-image($width, $height, $image, $bgsize: contain, $bgv: center, $bgh: center) {
+  @if ($width == 100%) {
+    $width: 100%;
+  } @else {
+    $width: rem-calc($width);
+  }
+  @if ($height == 100%) {
+    $height: 100%;
+  } @else {
+    $height: rem-calc($height);
+  }
+
+  display: block;
+  width: $width;
+  height: $height;
+  margin: 0 auto;
+  background: url($image) no-repeat $bgh $bgv;
+  @include css3-prefix(background-size, $bgsize);
+}
+
+@mixin divider($width, $color) {
+  .divider {
+    display: block;
+    height: 1px;
+    width: $width;
+    background: $color;
+    margin: 10px auto;
+  }
+}
+
+/* WEBKIT */
+
+@mixin css3-prefix($property, $value, $options: null) {
+  -webkit-#{$property}: #{$value} $options;
+  -khtml-#{$property}: #{$value} $options;
+  -moz-#{$property}: #{$value} $options;
+  -ms-#{$property}: #{$value} $options;
+  -o-#{$property}: #{$value} $options;
+  #{$property}: #{$value} $options;
+}
+
+/* KEY FRAMES */
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+///animation////
+@mixin animation($str) {
+  @include css3-prefix('animation', $str);
+ }
+/* ROTATE*/
+@mixin rotate($deg: 0, $m11: 0, $m12: 0, $m21: 0, $m22: 0) {
+  @include css3-prefix('transform', rotate($deg + deg));
+  filter: progid:DXImageTransform.Microsoft.Matrix(
+                  M11=#{$m11}, M12=#{$m12}, M21=#{$m21}, M22=#{$m22}, sizingMethod='auto expand');
+  zoom: 1;
+}
+
+/* TEXT SHADOW */
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0, 0, 0, .4)) {
+  text-shadow: $x $y $blur $color;
+}
+
+/* TRANSFORM  */
+@mixin transform($params) {
+  @include css3-prefix('transform', $params);
+}
+
+/* TRANSFORM STYLE */
+@mixin transform-style($style: preserve-3d) {
+  @include css3-prefix('transform-style', $style);
+}
+
+/* TRANSITION */
+@mixin transition($properties...) {
+
+  @if length($properties) >= 1 {
+    @include css3-prefix('transition', $properties);
+  } @else {
+    @include css3-prefix('transition', $what: all, $length: 1s, $easing: ease-in-out);
+  }
+}

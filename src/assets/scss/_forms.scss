@@ -1,0 +1,281 @@
+@media screen and (max-width: 43.750em) {
+  .contact {
+    .field {
+      position: relative;
+      height: 80px;
+      padding: 16px 0 8px 0;
+      margin-left: 5% !important;
+
+      &.errors {
+        &::after {
+          @include color-background(red, 0.8);
+          transform: scaleX(1);
+          transition: transform 0.3s;
+        }
+        &.is-focused::after {
+          transform: scaleX(1);
+          transition: transform 0.3s;
+        }
+        //@include color-background(red , 0.2);
+
+        //  @include transition(background $duration*2 ease);
+      }
+
+      .field-label {
+        position: relative;
+        margin: 0;
+        color: #e8be9a;
+        line-height: 16px;
+        font-size: 0.8em;
+        font-weight: 400;
+        display: block;
+
+      }
+      .field-input {
+        display: block;
+        width: 89%;
+        line-height: 28px;
+        padding: 8px 8px;
+        border: none;
+        -webkit-appearance: none;
+        outline: none;
+        background: transparent;
+        color: $brown;
+        font-size: 1em;
+      }
+      .field-text {
+        display: block;
+        width: 100%;
+        line-height: 16px;
+        padding: 8px 8px;
+        border: none;
+        -webkit-appearance: none;
+        outline: none;
+        background: transparent;
+        color: $brown;
+        font-size: 1em;
+      }
+      &.textaera {
+        height: auto !important;
+      }
+
+      &::after, &::before {
+        content: '';
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        background: #e8be9a;
+      }
+      &::after {
+        background: $brown;
+        transform: scaleX(0);
+        transition: transform 0.3s;
+      }
+
+    }
+    .field-submit {
+      width: 41%;
+      font-size: 0.9em;
+      background: $brown;
+      color: $white;
+      border: none;
+      clear: both;
+      font-weight: normal;
+      padding: rem-calc(10px);
+    }
+  }
+}
+
+@media screen and (min-width: 43.813em) and (max-width: 64em) {
+  .contact {
+    .field {
+      position: relative;
+      height: 120px;
+      padding: 28px 0 8px 0;
+      margin-left: 5% !important;
+      &.errors {
+        &::after {
+          @include color-background(red, 0.8);
+          transform: scaleX(1);
+          transition: transform 0.3s;
+        }
+        &.is-focused::after {
+          transform: scaleX(1);
+          transition: transform 0.3s;
+        }
+        //@include color-background(red , 0.2);
+
+        //  @include transition(background $duration*2 ease);
+      }
+      .field-label {
+        position: relative;
+        margin: 0;
+        color: #e8be9a;
+        line-height: 16px;
+        font-size: 1.4em;
+        font-weight: 400;
+        display: block;
+
+      }
+      .field-input {
+        display: block;
+        width: 100%;
+        line-height: 28px;
+        padding: 8px 8px;
+        border: none;
+        -webkit-appearance: none;
+        outline: none;
+        background: transparent;
+        color: $brown;
+        font-size: 1.4em;
+        height: rem_calc(50px);
+      }
+      .field-text {
+        display: block;
+        width: 100%;
+        line-height: 16px;
+        padding: 8px 8px;
+        border: none;
+        -webkit-appearance: none;
+        outline: none;
+        background: transparent;
+        color: $brown;
+        font-size: 1.4em;
+      }
+      &.textaera {
+        height: auto !important;
+      }
+
+      &::after, &::before {
+        content: '';
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        bottom: -12px;
+        left: 0;
+        background: #e8be9a;
+      }
+      &::after {
+        background: $brown;
+        transform: scaleX(0);
+        transition: transform 0.3s;
+      }
+
+    }
+    .field-submit {
+      width: 30%;
+      font-size: 1.4em;
+      background: $brown;
+      color: $white;
+      border: none;
+      clear: both;
+      font-weight: normal;
+      padding: rem-calc(15px);
+    }
+
+  }
+}
+
+@media screen and (min-width: 64.063em) and (max-width: 120em) {
+  .contact {
+    form {
+      margin-top: 50px !important;
+    }
+    .field {
+      position: relative;
+      height: 120px;
+      padding: 9px 0 8px 0;
+      margin-left: 5% !important;
+      &.errors {
+        &::after {
+          @include color-background(red, 0.8);
+          transform: scaleX(1);
+          transition: transform 0.3s;
+        }
+        &.is-focused::after {
+          transform: scaleX(1);
+          transition: transform 0.3s;
+        }
+        //@include color-background(red , 0.2);
+
+        //  @include transition(background $duration*2 ease);
+      }
+      .field-label {
+        position: relative;
+        margin: 0;
+        color: #e8be9a;
+        line-height: 16px;
+        font-size: 1.4em;
+        font-weight: 400;
+        display: block;
+
+      }
+      .field-input {
+        display: block;
+        width: 100%;
+        line-height: 28px;
+        padding: 8px 8px;
+        border: none;
+        -webkit-appearance: none;
+        outline: none;
+        background: transparent;
+        color: $brown;
+        font-size: 1.4em;
+      }
+      .field-text {
+        display: block;
+        width: 100%;
+        line-height: 16px;
+        padding: 8px 8px;
+        border: none;
+        -webkit-appearance: none;
+        outline: none;
+        background: transparent;
+        color: $brown;
+        font-size: 1.4em;
+      }
+      &.textaera {
+        height: auto !important;
+      }
+
+      &::after, &::before {
+        content: '';
+        height: 2px;
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        background: #e8be9a;
+      }
+      &::after {
+        background: $brown;
+        transform: scaleX(0);
+        transition: transform 0.3s;
+      }
+      &.has-label .field-label {
+        transform: translateY(0px) scale(0.75);
+      }
+      &.is-focused .field-label {
+        font-size: 1.5em;
+        color: $brown;
+      }
+      &.is-focused::after {
+        transform: scaleX(1);
+      }
+
+    }
+    .field-submit {
+      width: 30%;
+      font-size: 1.4em;
+      background: $brown;
+      color: $white;
+      border: none;
+      clear: both;
+      font-weight: normal;
+      padding: rem-calc(15px);
+    }
+
+  }
+}

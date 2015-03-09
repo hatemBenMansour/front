@@ -1,0 +1,60 @@
+<section class="{{menu.label}}" id="{{menu.label}}">
+    <ng-top-offset id="{{menu.label}}">
+
+        <h1>{{menu.title}}</h1>
+
+        <div class="send-message for-mobile-up">
+            <div class="alert-msg " ng-class="{'success-msg': sendSuccess ,'error-msg':sendError  }"
+                 ng-show="sendSuccess || sendError">
+                <span>{{contactMsg}}</span>
+            </div>
+
+        </div>
+        <form name="form" ng-submit="submitForm(user,form)" novalidate>
+
+
+            <div class="field"
+                 ng-class="{'errors' : (form.$submitted || form.name.$touched) && form.name.$error.required }">
+
+                <label for="name" class="field-label">Nom et prénom</label>
+                <input type="text" ng-model="user.name"
+                       class="field-input" name="name" id="name" value="" required="">
+
+            </div>
+
+            <div class="field"
+                 ng-class="{'errors' :(form.$submitted || form.mail.$touched) && (form.mail.$error.required || form.mail.$error.email)  }">
+
+                <label for="mail" class="field-label">E-mail </label>
+                <input type="email" ng-model="user.email" class="field-input" id="mail" name="mail"
+                       value="" required="">
+
+            </div>
+            <div class="field textaera "
+                 ng-class="{'errors' : (form.$submitted || form.message.$touched) && form.message.$error.required }">
+                <label for="message" class="field-label">Message</label>
+                    <textarea name="message" ng-model="user.message" class="field-text" id="message"
+                              rows="6" required=""></textarea>
+
+            </div>
+            <div class="clearfix"></div>
+            <button type="submit" class="field-submit">Envoyer</button>
+
+        </form>
+        <div class=" mobile for-only-mobile">
+
+            <div class="alert-msg success-msg"
+                 ng-class="{'animate_alert_show': sendSuccess , 'animate_alert_hide' :!sendSuccess}">
+                <span>Votre message est envoyé avec succès</span>
+            </div>
+            <div class="alert-msg error-msg"
+                 ng-class="{'animate_alert_show': sendError , 'animate_alert_hide' :!sendError}">
+                <span>Erreur d'envoi, merci de réessayer</span>
+            </div>
+
+        </div>
+
+
+        <div class="clearfix"></div>
+    </ng-top-offset>
+</section>

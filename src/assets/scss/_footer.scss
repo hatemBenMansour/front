@@ -1,0 +1,87 @@
+@media screen and (max-width:  43.750em) {
+  footer {
+    z-index: 9000;
+    @include color-background($brown);
+    min-height: rem-calc(90px);
+    text-align: center;
+    line-height: rem-calc(60px);
+    vertical-align: middle;
+    position: relative !important;
+    ul {
+      margin: 0 auto;
+      position: absolute;
+      left: 22%;
+      bottom: 65%;
+      li {
+        display: inline-block;
+        padding-right: 4%;
+        width: rem-calc(52px);
+        a {
+          text-decoration: none;
+          .icon_twitter {
+            font-size: 1.4em;
+          }
+          .icon_viadeo {
+            font-size: 1.4em;
+          }
+          .icon_linkedin {
+            font-size: 1.4em;
+          }
+          .icon_cv {
+            font-size: 1.4em;
+          }
+          &:hover i::before {
+            color: $brown-light;
+            transition: color 0.5s;
+          }
+        }
+
+      }
+    }
+    .copyright {
+      display: block;
+      position: absolute;
+      color: $white;
+      font-size: 0.6em;
+      width: 100%;
+      bottom: 0;
+      text-align: center;
+    }
+  }
+}
+
+  @media screen and (min-width: 43.813em) and (max-width: 64em) {
+    footer {
+
+      ul {
+        display: none;
+      }
+      .copyright {
+        display: block;
+        position: absolute;
+        color: $brown;
+        font-size: 1.1em;
+        width: 100%;
+        bottom: 0;
+        text-align: center;
+      }
+    }
+  }
+
+  @media screen and (min-width: 64.063em) and (max-width: 120em) {
+    footer {
+      ul {
+        display: none;
+      }
+      .copyright {
+        display: block;
+        position: absolute;
+        color: $brown;
+        font-size: 1.1em;
+        width: 100%;
+        bottom: 0;
+        text-align: center;
+      }
+    }
+  }
+

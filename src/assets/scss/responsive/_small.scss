@@ -1,0 +1,197 @@
+@media screen and (max-width: 43.750em) {
+  body {
+    #container {
+      .content {
+        section {
+          font-size: 1.4em;
+          padding: 0 4%;
+          p {
+            font-size: 1.1em !important;
+          }
+          h4 {
+            font-size: 1.1em !important;
+          }
+          * {
+            margin: 2% auto;
+          }
+          img {
+            &.logo {
+              margin: 0 auto;
+              padding: 25% 0 25% 0;
+            }
+          }
+          &.home {
+            height: 100vh;
+          }
+          &.about {
+            .me {
+              @include background-image(250px, 200px, '../assets/images/me-ben-mansour-hatem.png')
+            }
+
+          }
+          &.expertise {
+            .circle-progress-bar {
+              span {
+                font-size: 0.7em;
+              }
+              i {
+                font-size: 0.8em;
+                top: 25%;
+                left: 40%;
+              }
+            }
+          }
+          &.reference {
+            padding: 0 !important;
+            .project {
+              width: 100%;
+              height: rem-calc(180px);
+              position: relative;
+              &.effilogis {
+                @include background-image(100%, 155px, '../assets/images/effilogis.jpg', cover, 0);
+              }
+              &.caf92 {
+                @include background-image(100%, 155px, '../assets/images/caf92.jpg', cover, 0);
+              }
+              &.baq {
+                @include background-image(100%, 155px, '../assets/images/baq.jpg', cover, 0);
+              }
+              &.onisep {
+                @include background-image(100%, 155px, '../assets/images//onisep.jpg', cover, 0);
+              }
+              &.cinemacity {
+                @include background-image(100%, 155px, '../assets/images//cinemacity.jpg', cover, 0);
+              }
+              &.nivernais {
+                @include background-image(100%, 155px, '../assets/images//nivernais.jpg', cover);
+              }
+              i {
+                color: $white;
+                font-size: 1em;
+                @include color-background($text-color, 0.5);
+                width: 100%;
+                height: rem-calc(65);
+                padding: 10px 0;
+                margin: 0;
+                bottom: 0;
+              }
+
+            }
+          }
+          &.contact{
+
+              .alert-msg {
+                position: absolute;
+                z-index: 800;
+                width: 92%;
+                bottom: -30px;
+                span {
+                  color: #FFF;
+                  font-size: 0.7em;
+                }
+                &.success-msg {
+
+                  @include color-background($green, 0.6);
+                  border-color: $green;
+                }
+                &.error-msg {
+
+                  @include color-background(red, 0.6);
+                }
+              }
+
+
+
+          }
+
+        }
+        .contact_me {
+          color: $white;
+          top: 18%;
+          left: -67%;
+          &.home {
+            i.btn_me {
+              @include color-background($green, 0.85);
+            }
+            .details {
+              @include color-background($green, 0.85);
+            }
+
+          }
+          &.about {
+            i.btn_me {
+              @include color-background($blue, 0.85);
+            }
+            .details {
+              @include color-background($blue, 0.85);
+            }
+
+          }
+          &.expertise {
+            i.btn_me {
+              @include color-background($orange, 0.85);
+            }
+            .details {
+              @include color-background($orange, 0.85);
+            }
+
+          }
+          &.reference {
+            i.btn_me {
+              @include color-background($purple, 0.85);
+            }
+            .details {
+              @include color-background($purple, 0.85);
+            }
+
+          }
+          &.contact {
+            i.btn_me {
+              @include color-background($brown, 0.85);
+            }
+            .details {
+              @include color-background($brown, 0.85);
+            }
+
+
+          }
+          i.btn_me {
+            @include side-radius(right, 5px);
+            padding: 1px 26px 5px 3px;
+            font-size: 1.5em;
+            margin-top: 122px;
+          }
+          .details {
+            @include side-radius(right, 5px);
+            padding: 20px;
+
+            .me {
+              @include background-image(155px, 155px, '../assets/images/me-ben-mansour-hatem.png');
+            }
+          }
+
+        }
+      }
+
+    }
+    .loading {
+      top: 0px;
+      .logo {
+        left: 23%;
+        top: 29%;
+        width: 250px;
+        height: 250px;
+      }
+      .icon-loading {
+        width: 56%;
+        bottom: 10%;
+        .round {
+          width: 30px;
+          height: 30px;
+          @include radius(50px);
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}

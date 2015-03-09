@@ -1,0 +1,42 @@
+[class^="icon_"], [class*="icon_"] {
+  font-family: $font-icons;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  height: 1em;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon_"]:before, [class*="icon_"]:before {
+  line-height: 1.1em;
+  height: 1em;
+  display: block;
+}
+@mixin icon-class($name,$font-size,$content,$color,$margin : 0){
+  .icon_#{$name}:before {
+    margin: $margin;
+    font-size: $font-size;
+    content: $content;
+    color: $color;
+  }
+}
+
+@include icon-class($icon-name-menu,1.5em,$icon-menu, $white,-7px 0 0 0);
+@include icon-class($icon-name-home,2em,$icon-home, $white,0 0 0 6px);
+@include icon-class($icon-name-about,2em,$icon-about, $white,0 0 0 6px);
+@include icon-class($icon-name-reference,1.5em,$icon-reference, $white,5px 0 0 8px);
+@include icon-class($icon-name-expertise,1.9em,$icon-expertise, $white,0 0 0 14px);
+@include icon-class($icon-name-contact,1.3em,$icon-contact, $white,6px 0 0 6px);
+@include icon-class($icon-name-linkedin,1.3em,$icon-linkedin, $white,6px 0 0 6px);
+@include icon-class($icon-name-twitter,1.3em,$icon-twitter, $white,6px 0 0 6px);
+@include icon-class($icon-name-viadeo,1.3em,$icon-viadeo, $white,6px 0 0 6px);
+@include icon-class($icon-name-code,1.9em,$icon-code, $white,1px 0 0 8px);
+@include icon-class($icon-name-cv,1.2em,$icon-cv, $white,6px 0 0 8px);
+@include icon-class($icon-name-close,1.5em,$icon-close, $white,-7px 0 0 0px);
+@include icon-class($icon-name-up,1.8em,$icon-up, $green,-7px 0 0 0px);

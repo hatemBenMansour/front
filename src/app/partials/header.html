@@ -1,0 +1,20 @@
+<header class="{{section}} fixed for-only-mobile" >
+    <div class=" btn_animation menu-icon menu-icon-cross right {{section}}"
+         ng-class="{'is-opened' : showMenu , 'is-closed' : !showMenu }" ng-click="$parent.showMenu = !$parent.showMenu">
+        <i></i>
+    </div>
+    <nav class="right ">
+        <ul class="menu_mobile"
+            ng-class="{'animate_menu_mobile_show' : showMenu ,'animate_menu_mobile_hide' : !showMenu }">
+            <li ng-repeat="menu in menus" class="ss_menu_{{menu.label}}"><a href="#{{menu.label}}"
+                                                                            ng-click="goScrollTo(menu.label)"><i
+                    class="{{menu.class_icon}}"></i></a></li>
+        </ul>
+    </nav>
+</header>
+<header class=" fixed for-mobile-up">
+    <div class="btn_animation menu-icon-large menu-icon menu-icon-cross right {{section}} "
+         ng-class="{'is-opened' : showMenu , 'is-closed' : !showMenu }" ng-click="$parent.showMenu = !$parent.showMenu">
+        <i></i>
+    </div>
+</header>

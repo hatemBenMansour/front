@@ -1,0 +1,15 @@
+<div class="menu-left for-mobile-up "
+     ng-class="{'animate_menu_large_show' : showMenu  , 'animate_menu_large_hide' : !showMenu  }">
+    <div class="large-menu large-9 medium-9 left">
+        <ul>
+            <li ng-repeat="menu in menus" class="menu-link {{menu.label}}" ng-class="{'active' : section == menu.label}"><a href="#{{menu.label}}"
+                                                                              ng-click="goScrollTo(menu.label)"><i
+                    class="{{menu.class_icon}}"></i><span>{{menu.title}}</span></a></li>
+        </ul>
+    </div>
+    <div class="small-menu large-3 medium-3 left ">
+        <ul class="{{section}}">
+            <li ng-repeat="social in socials"><a href="{{social.link}}" target="_blank"><i class="{{social.class_icon}}"></i></a></li>
+        </ul>
+    </div>
+</div>

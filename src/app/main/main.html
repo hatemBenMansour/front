@@ -1,0 +1,13 @@
+
+<ng-include src="'app/partials/loading.html'"></ng-include>
+<ng-include src="'app/partials/header.html'"></ng-include>
+<div id="container" >
+    <ng-include src="'app/partials/menu-large.html'"></ng-include>
+
+    <div class="content " class="content ">
+        <ng-section-content ng-repeat="menu in menus" menu="menu.posts[0]" expertises="expertises" submitForm="submitForm()"></ng-section-content>
+        <ng-include src="'app/partials/contact_me_mobile.html'"></ng-include>
+        <ng-include src="'app/partials/footer.html'"></ng-include>
+    </div>
+    <div class="to-top {{section}}" ng-show="toTop" ng-click="goScrollTo('home')" ><i class="icon_up"></i></div>
+</div>

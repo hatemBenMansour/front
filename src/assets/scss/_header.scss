@@ -1,0 +1,57 @@
+@media screen and (max-width: 43.750em) {
+  header {
+    &.for-only-mobile {
+      display: block;
+    }
+    &.for-mobile-up {
+      display: none;
+    }
+    height: $topbar-height;
+    &.home {
+      @include color-background($topbar-home-bg-color);
+    }
+    &.about {
+      @include color-background($topbar-about-bg-color);
+    }
+    &.reference {
+      @include color-background($topbar-reference-bg-color);
+    }
+    &.expertise {
+      @include color-background($topbar-expertise-bg-color);
+    }
+    &.contact {
+      @include color-background($topbar-contact-bg-color);
+    }
+    button {
+      position: relative;
+      z-index: 9999;
+      border: 0;
+      width: rem-calc(45);
+      height: rem-calc(45);
+      @include color-background($green);
+      margin-right: rem-calc(9px);
+
+    }
+    nav {
+      ul {
+        position: absolute;
+        right: rem-calc(9px);
+        top: rem-calc(-180px);
+
+        z-index: 0;
+        li {
+          width: rem-calc(45);
+          height: rem-calc(45);
+          @include color-menu($icon-name-home, $topbar-home-bg-color);
+          @include color-menu($icon-name-about, $topbar-about-bg-color);
+          @include color-menu($icon-name-reference, $topbar-reference-bg-color);
+          @include color-menu($icon-name-expertise, $topbar-expertise-bg-color);
+          @include color-menu($icon-name-contact, $topbar-contact-bg-color);
+        }
+      }
+
+    }
+
+  }
+}
+
