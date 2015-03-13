@@ -280,7 +280,7 @@ header {
 
 ////animation alert send message contact///
 .animate_alert_show {
-  @include transform(translateY(-16px));
+  @include transform(translateY(-40px));
   @include transition(transform $duration*2 ease);
 
 }

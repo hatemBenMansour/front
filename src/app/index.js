@@ -1,8 +1,7 @@
 'use strict';
 
 angular.module('portfolioFinal', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'mm.foundation', 'duScroll', 'angular-svg-round-progress'])
-    .constant("CSRF_TOKEN", '{{ csrf_token() }}')
-    .config(function ($stateProvider, $urlRouterProvider, RestangularProvider, $httpProvider) {
+    .config(function ($stateProvider, $urlRouterProvider, RestangularProvider, $httpProvider, $locationProvider) {
         $stateProvider
             .state('home', {
                 url: '/',
@@ -11,10 +10,8 @@ angular.module('portfolioFinal', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSaniti
             });
 
         $urlRouterProvider.otherwise('/');
-
-
         RestangularProvider.setBaseUrl('http://localhost:8000/api');
-        $httpProvider.defaults.headers.common['Content-Type'] = 'application/json';
+      //  RestangularProvider.setDefaultHeaders({'X-CSRF-Token': CSRF_TOKEN});
         RestangularProvider.addResponseInterceptor(function (data, operation, what, url, response, deferred) {
             var extractedData;
             if (operation === "getList") {
@@ -25,10 +22,26 @@ angular.module('portfolioFinal', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSaniti
             return extractedData;
         });
 
+        if (window.history && window.history.pushState) {
+            //$locationProvider.html5Mode(true); will cause an error $location in HTML5 mode requires a  tag to be present! Unless you set baseUrl tag after head tag like so: <head> <base href="/">
 
-// RestangularProvider.setDefaultRequestParams('application/json');
-// RestangularProvider.setDefaultRequestParams({apiKey: 'cDJBs2yBJPPCyNQC6zShuzTCaYnVlEiM'})
+            // to know more about setting base URL visit: https://docs.angularjs.org/error/$location/nobase
+
+            // if you don't wish to set base URL then use this
+            $locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false
+            });
+        }
+        $httpProvider.defaults.useXDomain = true;
+        $httpProvider.defaults.withCredentials = true;
+        delete $httpProvider.defaults.headers.common["X-Requested-With"];
+        $httpProvider.defaults.headers.common["Accept"] = "application/json";
+        $httpProvider.defaults.headers.common["Content-Type"] = "application/json";
 
 
     })
-;
+  ;
+
+
+

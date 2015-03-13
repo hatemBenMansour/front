@@ -12,6 +12,7 @@ angular.module('portfolioFinal')
 
                 scope.submitForm = function (user, form) {
                     if (!form.$invalid) {
+                        user._token = $rootScope._token;
                         Contact.send('user', user).then(function (response) {
                             if (response.status == 'success') {
                                 scope.sendSuccess = true;
@@ -28,6 +29,7 @@ angular.module('portfolioFinal')
                                 scope.sendError = false;
                             }, 2500);
                         });
+
 
                     }
 

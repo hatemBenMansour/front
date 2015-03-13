@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('portfolioFinal')
-    .controller('MainCtrl', function ($scope, $rootScope, config, Restangular, $document, $timeout, $cookies, $cookieStore, Competences, MenusContents, Socials) {
+    .controller('MainCtrl', function ($scope, $rootScope, config, Restangular, $document, $timeout, $cookies, $cookieStore, Competences, MenusContents, Socials,Contact) {
         $scope.showMenu = false;
         $scope.showContactMe = false;
         $scope.toTop = false;
@@ -21,7 +21,9 @@ angular.module('portfolioFinal')
         MenusContents.list().then(function (menus) {
             $scope.menus = menus;
         });
-
+        Contact.tokenValue().then(function (response) {
+            $rootScope._token = response[0]._token;
+        });
 
         $scope.goScrollTo = function (element) {
             var _elementToGo = angular.element(document.getElementById(element));
